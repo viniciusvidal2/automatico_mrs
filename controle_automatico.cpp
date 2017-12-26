@@ -1,9 +1,16 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 
-void chatterCallback(const std_msgs::String::ConstPtr& msg)
+//#include <mavros/mavros.h>
+#include <mavros_msgs/Mavlink.h>
+#include <mavros_msgs/mavlink_convert.h>
+//#include <mavlink/config.h>
+#include <mavros/mavros.h>
+#include <mavros_msgs/AttitudeTarget.h>
+
+void chatterCallback(const mavros_msgs::AttitudeTargetConstPtr& msg)
 {
-    ROS_INFO("I heard: [%s]", msg->data.c_str());
+    ROS_INFO("I heard: [%.2f]", msg->body_rate.x);
 }
 
 int main(int argc, char **argv)
