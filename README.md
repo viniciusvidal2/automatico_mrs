@@ -3,9 +3,10 @@ Aqui esta o codigo para comunicar automaticamente o controle dos servos de acord
 
 FACA TUDO EM WORKSPACE SEPARADO, porque da conflito de compilador, precisa de suporte para c++11
 
-Necessario adicionar no qt, na aba Build, para CatkinMake Arguments:
+No arquivo CMakeLists.txt adicionar (porem ja adicionado na versao mais recente):
 
--DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/gcc -v
+add_compile_options(-std=c++11)
+
 
 Pacotes necessarios no mesmo workspace para rodar com as dependencias incluidas ate o momento:
 
