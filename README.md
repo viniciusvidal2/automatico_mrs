@@ -12,3 +12,8 @@ Pacotes necessarios no mesmo workspace para rodar com as dependencias incluidas 
 
 dynamixel_workbench_msgs disponivel em https://github.com/viniciusvidal2/dynamixel-workbench-msgs
 dunamixel_workbench_toolbox disponivel em https://github.com/viniciusvidal2/dynamixel-workbench, mas somente a pasta toolbox, nao o diretorio todo, pois havera conflito
+
+Caso envie o codigo novamente para dentro da placa, ha necessidade de reiniciar o driver da mesma, feito com os seguintes comandos:
+
+sudo modprobe -r [nome_do_driver]
+sudo modprobe [nome_do_driver]
