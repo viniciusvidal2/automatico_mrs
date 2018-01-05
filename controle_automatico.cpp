@@ -68,7 +68,7 @@ private:
     {
       // Analisando diferenca de yaw
       delta_yaw = wrap180(yaw_atual, yaw_para_apontar);
-      ROS_INFO("delta yaw: %.2f", yaw_mid_range);
+      //ROS_INFO("delta yaw: %.2f", yaw_mid_range);
       ang_pan   = ((yaw_mid_range + delta_yaw) < ang_yaw_range[1]) ? yaw_mid_range + delta_yaw : ang_yaw_range[1]; // LImitando maximo
       ang_pan   = (ang_pan > ang_yaw_range[0]) ? ang_pan : ang_yaw_range[0]; // LImitando minimo
 
@@ -120,9 +120,9 @@ private:
         yaw_para_apontar   = ((float)(msg->heading)*0.01 >= 0) ? (float)(msg->heading)*0.01 : yaw_atual; // [DEGREES]
 //        yaw_para_apontar = msg->heading*0.01;
         // Mostrando na tela se esta tudo ok
-//        ROS_INFO("Pitch: [%.2f]", pitch_para_apontar);
-//        ROS_INFO("Yaw:   [%.2f]", yaw_atual);
-//        ROS_INFO("ALvo:  [%.2f]", yaw_para_apontar);
+        ROS_INFO("Pitch: [%.2f]", pitch_para_apontar);
+        ROS_INFO("Yaw:   [%.2f]", yaw_atual);
+        ROS_INFO("ALvo:  [%.2f]", yaw_para_apontar);
     }
 
 };
